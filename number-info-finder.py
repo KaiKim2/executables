@@ -9,7 +9,7 @@ print("| |_) | '_ \ / _ \| '_ \ / _ \_____| || '_ \| |_ / _ \ / _` |/ _` |")
 print("|  __/| | | | (_) | | | |  __/_____| || | | |  _| (_) | (_| | (_| |")
 print("|_|   |_| |_|\___/|_| |_|\___|    |___|_| |_|_|  \___/ \__, |\__,_|")
 print("                                                       |___/")
-
+print("\n")
 print("Updating and Upgrading the system: ")
 time.sleep(1)
 subprocess.run("pkg update && pkg upgrade -y", shell=True)
